@@ -1,0 +1,7 @@
+README.md
+setup.py
+bucketting.egg-info/PKG-INFO
+bucketting.egg-info/SOURCES.txt
+bucketting.egg-info/dependency_links.txt
+bucketting.egg-info/requires.txt
+bucketting.egg-info/top_level.txt

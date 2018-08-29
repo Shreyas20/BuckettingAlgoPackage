@@ -1,0 +1,19 @@
+{
+    "bucketting": [
+        {
+            "Per Unique Values": 200,
+            "empty bucket percentage of data": 0.0002,
+            "No of empty buckets for clustered data":40,
+            "Too dense":0.20,
+            "max no of parts for bucket":8,
+            "max no of zeros":4
+        }
+    ],
+    "masks": {
+        "id": "valore"
+    },
+    "om_points": "value",
+    "parameters": {
+        "id": "valore"
+    }
+}
