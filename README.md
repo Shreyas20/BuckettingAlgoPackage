@@ -1,2 +1,23 @@
 # BuckettingAlgoPackage
 Pip installable python package to convert integer array to categorical
+
+Before using this algorithm, it is very important to know the data for which you are using this algorithm as well as intention and working of this algorithm. For some machine learning algorithms like association rule mining, NLP algorithms, etc., categorical variables are required. Converting integer variables to the ranges by intuition doesn't make sense sometimes. It can affect accuracy of the model. So by studying distribution of integer data in the array, we can say that there are roughly three types of integer data which are generally used.
+
+Step data: Data varies in the steps of large integer. That is, when data is sorted we can observe that the next number we get is after large interval. In this case, unique numbers are very less as compared to total number of elements in the array. In this case every unique integer will be considered as a categorical level.
+
+Clustered data: Data is clustered around some values and there is nothing in between those clusters. In this case if we observe percentile distribution of data, large amount of data is distributed along very small area and we will see large gaps having very small data. If number of empty 1-percentile bins are more than required number, the array will be of clustered data type. New formed bucket size will be indicated in the hyperparameters, based on density of data along the bins, number of empty buckets observed and maximum bins allowed in a bucket.
+
+Continuous data: This is type of data which is observed more often. The integer array which doesn't satisfy both of above conditions, distribution of data is almost same along percentile line, data is said to be continuous.
+
+To decide integer data type, array is divided into 100 bins by range. This algorithm will identify the type of integer data and make buckets accordingly. It will return a interval (bucket) for every value in which it lies. It will take integer array and hyperparameters (list of 6 integers, if default values are not to be used) as an input and will give categorical output array.
+
+Hyperparameters:
+
+There are also some hyperparameters which will decide the bucket size, identify boundary conditions to make data of certain type according to user requirements.
+
+Number of elements require for every unique element to make it step data. (default = 2000)
+Fraction of data required to qualify a percentile bin as an empty bucket. (default = 0.0002)
+Minimum number of empty bins required to make it clustered type integer array. (default = 40)
+Fraction of data required to make it as a bucket. If the percentage of data is already there in the bucket, Algorithm will stop adding new bins to the bucket. (default = 0.20)
+Maximum number of bins allowed in a bucket. If the number is reached, Algorithm will stop adding new bins to the bucket. (default = 8)
+Number of empty bins allowed in a bucket. If the number is reached, Algorithm will stop adding new bins to the bucket. (default = 4)
